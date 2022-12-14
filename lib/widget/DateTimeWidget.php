@@ -23,8 +23,9 @@ class DateTimeWidget extends HelperWidget
 	 */
 	protected function getEditHtml()
 	{
+
 		$type  = ( $this->getSettings('TIME') ) ? "FULL" : "SHORT";
-		$value = ( $this->getValue() != '' ) ? ConvertTimeStamp(strtotime($this->getValue())) : '';
+		$value = ( $this->getValue() != '' ) ? $this->getValue() : '';
 		return \CAdminCalendar::CalendarDate($this->getEditInputName(), $value , $type, 10, $this->getSettings('TIME'));
 	}
 
